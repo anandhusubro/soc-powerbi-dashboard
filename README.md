@@ -6,6 +6,13 @@ Built using Power BI, DAX, and 1,500 synthetic security alerts generated with Py
 
 > Portfolio simulation: all data is synthetic. This project is not connected to a live SIEM.
 
+## Dashboard Preview
+
+### SOC Overview
+![SOC Overview](soc-overview.png)
+
+### Triage & Detection Quality
+![Triage and Detection Quality](triage-detection-quality.png)
 ## Dashboard Pages
 
 ### SOC Overview
