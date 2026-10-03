@@ -1,0 +1,26 @@
+// Create each measure separately on the Alerts table. This is a reference file,
+// not a script that Power BI Desktop imports automatically.
+
+Total Alerts = COUNTROWS(Alerts)
+
+Open Alerts = CALCULATE([Total Alerts], KEEPFILTERS(Alerts[Status] <> "Closed"))
+
+Critical Open Alerts = CALCULATE([Open Alerts], KEEPFILTERS(Alerts[Severity] = "Critical"))
+
+Closed Alerts = CALCULATE([Total Alerts], KEEPFILTERS(Alerts[Status] = "Closed"))
+
+Mean Acknowledgment Minutes = AVERAGE(Alerts[AckMinutes])
+
+Mean Resolution Minutes = AVERAGE(Alerts[ResolutionMinutes])
+
+False Positive Alerts = CALCULATE([Closed Alerts], KEEPFILTERS(Alerts[Disposition] = "False Positive"))
+
+False Positive Rate = DIVIDE([False Positive Alerts], [Closed Alerts])
+
+SLA Met Alerts = CALCULATE([Total Alerts], KEEPFILTERS(Alerts[AckSLAStatus] = "Met"))
+
+SLA Eligible Alerts = CALCULATE([Total Alerts], KEEPFILTERS(Alerts[AckSLAStatus] <> "Pending"))
+
+Acknowledgment SLA Compliance = DIVIDE([SLA Met Alerts], [SLA Eligible Alerts])
+
+SLA Breached Alerts = CALCULATE([Total Alerts], KEEPFILTERS(Alerts[AckSLAStatus] = "Breached"))
