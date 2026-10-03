@@ -9,10 +9,12 @@ Built using Power BI, DAX, and 1,500 synthetic security alerts generated with Py
 ## Dashboard Preview
 
 ### SOC Overview
-![SOC Overview](soc-overview.png)
+![SOC Overview]<img width="440" height="247" alt="image" src="https://github.com/user-attachments/assets/da6dfadd-2c55-477a-ac89-132875c85100" />
+)
 
 ### Triage & Detection Quality
-![Triage and Detection Quality](triage-detection-quality.png)
+![Triage and Detection Quality]<img width="385" height="214" alt="image" src="https://github.com/user-attachments/assets/d7910b7b-1b5c-402a-80cd-ca813c7e30aa" />
+
 ## Dashboard Pages
 
 ### SOC Overview
